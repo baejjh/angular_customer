@@ -6,6 +6,7 @@ myApp.factory('CustomersFactory', function() {
 		{name: 'Princess Bubblegum', created_at: "Fri Jan 24 1934"},
 	];
 	var factory = {}; 
+	var err = "The customer name already exists!"
 	factory.getAllCustomers = function () {
 		return customers;
 	}
@@ -13,7 +14,7 @@ myApp.factory('CustomersFactory', function() {
 		var bool = true;
 		for(var i = 0; i < customers.length; i++) {
 			if(customers[i].name === info.name){
-				alert("The name already exists");
+				// alert("Another Way to Display the Error");
 				bool = false;
 			}
 		}	
@@ -27,9 +28,9 @@ myApp.factory('CustomersFactory', function() {
 				created_at: date
 			});	
 		}
-		// else {
-		// 	alert(err);
-		// }	
+		else {
+			alert(err);
+		}	
 	}
 	factory.removeOldCustomer = function (info) {
 		// code to remove customer
