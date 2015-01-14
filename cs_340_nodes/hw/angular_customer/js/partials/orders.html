@@ -1,0 +1,42 @@
+<div ng-controller="OrdersController">
+<h1>Add a New Order</h1>
+	<!-- New Order -->
+	<select ng-model='new_order.cust_name'>
+		<option>Select the Customer</option>
+		<option ng-repeat="order in orders"> {{ order.cust_name }} </option>
+	</select>
+	<select ng-model='new_order.product'>
+		<option>Select a Product Name</option>
+		<option ng-repeat="product in products"> {{ product.name }} </option>
+	</select>
+	<select ng-model='new_order.quantity'>
+		<option>Select a Quantity</option>
+		<option>1</option>
+		<option>2</option>
+		<option>3</option>
+		<option>4</option>
+		<option>5</option>
+	</select>
+	<button ng-click="addOrder()">Add a New Order</button>
+	<!-- Error Message -->
+	<p ng-messages='er in err'>
+		{{ er }}
+	</p>
+	<!-- Search Bar -->
+	<input type="text" placeholder="Search Orders" ng-model="filter_entry"> {{ filter_entry }}
+	<!-- Order Table -->
+	<table>
+	<th><tr>
+		<td>Customer Name</td>
+		<td>Product</td>
+		<td>Quantity</td>
+		<td>Created Date</td>
+	</tr></th>
+	<tr ng-repeat="order in orders | filter: filter_entry | orderBy: 'product' ">
+		<td><span ng-bind="order.cust_name"></td>
+		<td><span ng-bind="order.product"></td>
+		<td><span ng-bind="order.quantity"></td>
+		<td><span ng-bind="order.created_at"></td>
+	</tr>
+	</table>
+</div>

@@ -3,10 +3,10 @@ var myApp = angular.module('myApp', ['ngRoute']);
 myApp.config(function($routeProvider) { 
 	$routeProvider
 	.when('/', {
-		templateUrl: '/js/partials/customer.html'
+		templateUrl: '/js/partials/customers.html'
 	})
-	.when('/products', {
-		templateUrl: '/js/partials/product.html'
+	.when('/orders', {
+		templateUrl: '/js/partials/orders.html'
 	})
 	.otherwise({
 		redirectTo:'/'

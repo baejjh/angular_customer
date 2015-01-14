@@ -20,8 +20,7 @@ myApp.factory('CustomerFactory', function() {
 		}	
 		if(bool === true) {
 			var time = Date();
-			var date = time.substring(0, 15);
-			// console.log(time);
+			var date = time.substring(0, 15); //print only date - console.log(time);
 			customers.push({
 				id: info.id,
 				name: info.name,

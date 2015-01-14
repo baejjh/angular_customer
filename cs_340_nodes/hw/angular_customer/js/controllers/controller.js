@@ -8,6 +8,10 @@ myApp.controller('CustomersController', function($scope, CustomerFactory){
 	}
 });
 
-myApp.controller('ProductsController', function($scope){
-	$scope.hello_msg = "Example of Routes: Products Page";
+myApp.controller('OrdersController', function($scope, OrderFactory){ 
+	$scope.orders = OrderFactory.getAllOrders();
+	$scope.products = OrderFactory.getAllProducts();
+	$scope.addOrder = function() {
+		OrderFactory.addNewOrder($scope.new_order);
+	}
 });
