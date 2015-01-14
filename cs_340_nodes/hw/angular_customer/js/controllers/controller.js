@@ -1,10 +1,10 @@
-myApp.controller('CustomersController', function($scope, CustomersFactory){ 
-	$scope.customers = CustomersFactory.getAllCustomers();
+myApp.controller('CustomersController', function($scope, CustomerFactory){ 
+	$scope.customers = CustomerFactory.getAllCustomers();
 	$scope.addCustomer = function() {
-		CustomersFactory.addNewCustomer($scope.new_customer);
+		CustomerFactory.addNewCustomer($scope.new_customer);
 	}
 	$scope.removeCustomer = function () {
-		CustomersFactory.removeOldCustomer($scope.customer)
+		CustomerFactory.removeOldCustomer($scope.customer)
 	}
 });
 

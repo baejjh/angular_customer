@@ -1,4 +1,4 @@
-myApp.factory('CustomersFactory', function() {
+myApp.factory('CustomerFactory', function() {
 	var customers = [
 		{name: 'Finn, the Human', created_at: "Mon Jan 12 2015"},
 		{name: 'Lady Rainicorn', created_at: "Wed Mar 3 2035"},
