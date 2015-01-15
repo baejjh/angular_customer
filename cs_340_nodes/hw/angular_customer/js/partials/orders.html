@@ -1,16 +1,13 @@
 <div ng-controller="OrdersController">
 <h1>Add a New Order</h1>
 	<!-- New Order -->
-	<select ng-model='new_order.cust_name'>
-		<option>Select the Customer</option>
-		<option ng-repeat="order in orders"> {{ order.cust_name }} </option>
-	</select>
+	<input type="text" ng-model='new_order.cust_name' placeholder="Enter Customer Name">
 	<select ng-model='new_order.product'>
-		<option>Select a Product Name</option>
+		<option value="">Select a Product Name</option>
 		<option ng-repeat="product in products"> {{ product.name }} </option>
 	</select>
 	<select ng-model='new_order.quantity'>
-		<option>Select a Quantity</option>
+		<option value="">Select a Quantity</option>
 		<option>1</option>
 		<option>2</option>
 		<option>3</option>

@@ -41,19 +41,16 @@ myApp.factory('OrderFactory', function() {
 	}
 	factory.addNewOrder = function(info){
 		var bool = true;
-		for(var i = 0; i < orders.length; i++) {
-			if(orders[i].cust_name === info.cust_name
-			// && orders[i].product === info.product
-			// && orders[i].quantity === info.quantity
-			){
-				alert("Order Already Exists");
+		if(info.cust_name != null
+			&& info.product != null
+			&& info.quantity != null) {
+				alert("Please enter all the fields");
 				bool = false;
 			}
-		}	
-		if(bool === true) {
+		else if(bool === true) {
 			var time = Date();
 			var date = time.substring(0, 15); //print only date - console.log(time);
-			console.log(info);
+			console.log(time);
 			orders.push({
 				id: info.id,
 				cust_name: info.cust_name,
