@@ -20,7 +20,7 @@
 	<button ng-click="addOrder()">Add a New Order</button>
 	<!-- Error Message -->
 	<p ng-messages='er in err'>
-		{{ er }}
+		<span ng-bind="er">
 	</p>
 	<!-- Search Bar -->
 	<input type="text" placeholder="Search Orders" ng-model="filter_entry"> {{ filter_entry }}

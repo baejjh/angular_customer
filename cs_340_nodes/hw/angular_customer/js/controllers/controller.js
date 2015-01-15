@@ -14,4 +14,4 @@ myApp.controller('OrdersController', function($scope, OrderFactory){
 	$scope.addOrder = function() {
 		OrderFactory.addNewOrder($scope.new_order);
 	}
-});
+});  

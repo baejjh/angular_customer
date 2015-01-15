@@ -42,7 +42,10 @@ myApp.factory('OrderFactory', function() {
 	factory.addNewOrder = function(info){
 		var bool = true;
 		for(var i = 0; i < orders.length; i++) {
-			if(orders[i].cust_name === info.cust_name){
+			if(orders[i].cust_name === info.cust_name
+			// && orders[i].product === info.product
+			// && orders[i].quantity === info.quantity
+			){
 				alert("Order Already Exists");
 				bool = false;
 			}
@@ -50,9 +53,12 @@ myApp.factory('OrderFactory', function() {
 		if(bool === true) {
 			var time = Date();
 			var date = time.substring(0, 15); //print only date - console.log(time);
+			console.log(info);
 			orders.push({
 				id: info.id,
 				cust_name: info.cust_name,
+				product: info.product,
+				quantity: info.quantity,
 				created_at: date
 			});	
 		}	
